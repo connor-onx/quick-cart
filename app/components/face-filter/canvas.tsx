@@ -22,7 +22,8 @@ const FaceFollower: React.FC<FaceFollowerProps> = (props) => {
   const objRef = useRef<THREE.Object3D | null>(null);
   const mouthOpenRef = useRef<THREE.Object3D | null>(null);
   const mouthSmileRef = useRef<THREE.Object3D | null>(null);
-  const gltf = useGLTF("/models/luffy_hat.glb") as { scene: THREE.Object3D };
+  // Add model here
+  const gltf = useGLTF("/models/") as { scene: THREE.Object3D };
 
   useEffect(() => {
     const threeObject3D = objRef.current;
@@ -89,7 +90,7 @@ const compute_sizing = () => {
   return { width, height, top, left };
 };
 
-const AppCanvas: React.FC = () => {
+const AugmentedRealityCamera: React.FC = () => {
   _expressions = [];
   for (let i = 0; i < _maxFacesDetected; ++i) {
     _expressions.push({
@@ -220,4 +221,4 @@ const AppCanvas: React.FC = () => {
   );
 };
 
-export default AppCanvas;
+export default AugmentedRealityCamera;
