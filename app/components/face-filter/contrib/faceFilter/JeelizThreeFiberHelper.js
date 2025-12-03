@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   Matrix4,
   Mesh,
