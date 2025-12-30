@@ -16,6 +16,8 @@ let _expressions: FaceExpression[] = [];
 interface FaceFollowerProps {
   faceIndex: number;
   expression: FaceExpression;
+  modelPath: string;
+  size: ProductSize;
 }
 
 const FaceFollower: React.FC<FaceFollowerProps> = (props) => {
@@ -23,7 +25,7 @@ const FaceFollower: React.FC<FaceFollowerProps> = (props) => {
   const mouthOpenRef = useRef<THREE.Object3D | null>(null);
   const mouthSmileRef = useRef<THREE.Object3D | null>(null);
   // Add model here
-  const gltf = useGLTF("/models/") as { scene: THREE.Object3D };
+  const gltf = useGLTF(props.modelPath) as { scene: THREE.Object3D };
 
   useEffect(() => {
     const threeObject3D = objRef.current;
@@ -50,9 +52,17 @@ const FaceFollower: React.FC<FaceFollowerProps> = (props) => {
     }
   });
 
+  const scaleFactors: Record<ProductSize, number> = {
+    "XS": 0.6,
+    "S": 0.8,
+    "M": 1.0,
+    "L": 1.2,
+    "XL": 1.4
+  }
+
   return (
     <object3D ref={objRef}>
-      <primitive object={gltf.scene} position={[0, 0.8, 0]} scale={[1, 1, 1]} />
+      <primitive object={gltf.scene} position={[0, 0.8, 0]} scale={[scaleFactors[props.size], scaleFactors[props.size], scaleFactors[props.size]]} />
       <object3D ref={mouthOpenRef} />
       <object3D ref={mouthSmileRef} />
     </object3D>
@@ -82,15 +92,15 @@ const ThreeGrabber: React.FC<ThreeGrabberProps> = (props) => {
 };
 
 const compute_sizing = () => {
-  const height = 1000;
-  const wWidth = 1000;
+  const height = 956;
+  const wWidth = 560;
   const width = Math.min(wWidth, height);
   const top = 0;
   const left = (wWidth - width) / 2;
   return { width, height, top, left };
 };
 
-const AugmentedRealityCamera: React.FC = () => {
+const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size: ProductSize}> = ({modelPath, active, size}) => {
   _expressions = [];
   for (let i = 0; i < _maxFacesDetected; ++i) {
     _expressions.push({
@@ -188,12 +198,13 @@ const AugmentedRealityCamera: React.FC = () => {
   }, [isInitialized]);
 
   return (
-    <div>
+    <>
       <Canvas
         className="mirrorX"
         style={{
-          position: "fixed",
-          zIndex: 2,
+          position: "absolute",
+          opacity: active ? 1 : 0,
+          zIndex: 10,
           ...sizing,
         }}
         gl={{
@@ -203,21 +214,22 @@ const AugmentedRealityCamera: React.FC = () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 5, 5]} intensity={1} />
         <ThreeGrabber sizing={sizing} />
-        <FaceFollower faceIndex={0} expression={_expressions[0]} />
+        <FaceFollower faceIndex={0} expression={_expressions[0]} modelPath={modelPath} size={size}/>
       </Canvas>
 
       <canvas
         className="mirrorX"
         ref={faceFilterCanvasRef}
         style={{
-          position: "fixed",
-          zIndex: 1,
+          position: "absolute",
+          opacity: active ? 1 : 0,
+          zIndex: 5,
           ...sizing,
         }}
         width={sizing.width}
         height={sizing.height}
       />
-    </div>
+    </>
   );
 };
 

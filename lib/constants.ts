@@ -25,8 +25,8 @@ export const categories = [
     image: 'https://images.unsplash.com/photo-1719552979950-f35958f97ebe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcmVzcyUyMGNsb3RoaW5nJTIwZmFzaGlvbnxlbnwxfHx8fDE3NjU0ODg5OTl8MA&ixlib=rb-4.1.0&q=80&w=1080'
   },
   {
-    name: "Caps",
-    link: "/caps",
+    name: "Hats",
+    link: "/hats",
     image: 'https://images.unsplash.com/photo-1728925962995-c5a11993564a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNlYmFsbCUyMGNhcCUyMGhhdHxlbnwxfHx8fDE3NjUzNzY3Njl8MA&ixlib=rb-4.1.0&q=80&w=1080'
   }
 ];
