@@ -1,10 +1,10 @@
 import ProductInfoPageContainer from "@/components/product-info-page/ProductInfoPageContainer";
 
-interface HatPageProps {
+interface PantPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function HatPage({ params }: HatPageProps) {
+export default async function PantPage({ params }: PantPageProps) {
   const { id } = await params;
   
   const url = `${process.env.BASE_URL}/api/product/${id}`;

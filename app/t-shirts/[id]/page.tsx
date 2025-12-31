@@ -1,20 +1,20 @@
 import ProductInfoPageContainer from "@/components/product-info-page/ProductInfoPageContainer";
 
-interface HatPageProps {
+interface TShirtPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function HatPage({ params }: HatPageProps) {
+export default async function TShirtPage({ params }: TShirtPageProps) {
   const { id } = await params;
   
   const url = `${process.env.BASE_URL}/api/product/${id}`;
   const res = await fetch(url);
 
-  const hat = await res.json();
+  const tshirt = await res.json();
   
   return (
     <main className="prose mx-auto p-4">
-      <ProductInfoPageContainer product={hat} />
+      <ProductInfoPageContainer product={tshirt} />
     </main>
   )
 }
