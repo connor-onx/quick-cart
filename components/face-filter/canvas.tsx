@@ -4,7 +4,6 @@ import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { FaceExpression, DetectState } from "../../types/facefilter";
 // @ts-expect-error: Module Typings
 import { JEELIZFACEFILTER, NN_4EXPR } from "facefilter";
 import { JeelizThreeFiberHelper } from "./contrib/faceFilter/JeelizThreeFiberHelper.js";
@@ -87,7 +86,7 @@ const ThreeGrabber: React.FC<ThreeGrabberProps> = (props) => {
       JeelizThreeFiberHelper.update_camera(props.sizing, _threeFiber.camera);
     }
   });
-  
+
   return null;
 };
 
@@ -100,7 +99,7 @@ const compute_sizing = () => {
   return { width, height, top, left };
 };
 
-const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size: ProductSize}> = ({modelPath, active, size}) => {
+const AugmentedRealityCamera: React.FC<{ modelPath: string, active: boolean, size: ProductSize }> = ({ modelPath, active, size }) => {
   _expressions = [];
   for (let i = 0; i < _maxFacesDetected; ++i) {
     _expressions.push({
@@ -112,7 +111,7 @@ const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size
   }
 
   const [sizing, setSizing] = useState(compute_sizing());
-  const [isInitialized] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   let _timerResize: number | null = null;
 
@@ -173,19 +172,22 @@ const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size
   };
 
   const faceFilterCanvasRef = useRef<HTMLCanvasElement | null>(null);
-
+ 
   useEffect(() => {
     window.addEventListener("resize", handle_resize);
     window.addEventListener("orientationchange", handle_resize);
-
-    JEELIZFACEFILTER.init({
-      canvas: faceFilterCanvasRef.current ?? undefined,
-      NNC: NN_4EXPR,
-      maxFacesDetected: 1,
-      followZRot: true,
-      callbackReady,
-      callbackTrack,
-    });
+    if (!isInitialized) return;
+    console.log(faceFilterCanvasRef.current);
+    // setTimeout(() => {
+        JEELIZFACEFILTER.init({
+        canvas: faceFilterCanvasRef.current,
+        NNC: NN_4EXPR,
+        maxFacesDetected: 1,
+        followZRot: true,
+        callbackReady,
+        callbackTrack,
+      });
+    // }, 3000);
 
     return () => {
       window.removeEventListener("resize", handle_resize);
@@ -196,6 +198,10 @@ const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInitialized]);
+
+  useEffect(() => {
+    if (faceFilterCanvasRef.current) setIsInitialized(true);
+  }, [faceFilterCanvasRef])
 
   return (
     <>
@@ -214,7 +220,7 @@ const AugmentedRealityCamera: React.FC<{modelPath: string, active: boolean, size
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 5, 5]} intensity={1} />
         <ThreeGrabber sizing={sizing} />
-        <FaceFollower faceIndex={0} expression={_expressions[0]} modelPath={modelPath} size={size}/>
+        <FaceFollower faceIndex={0} expression={_expressions[0]} modelPath={modelPath} size={size} />
       </Canvas>
 
       <canvas

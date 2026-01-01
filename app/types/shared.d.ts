@@ -24,6 +24,7 @@ type Product = {
   brand: string,
   status: string,
   relatedProducts: ProductMinimal[],
+  modelPath: string,
   created_at: string,
   updated_at: string
 }
