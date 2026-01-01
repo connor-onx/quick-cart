@@ -3,4 +3,25 @@
     "id": "99928afe-58a3-4c59-9a6e-38df10bbc907",
     "name": "hats"
   }
+  ,
+  {
+    "id": "4f7b2d1a-8c3e-4f1a-9d2b-1a2c3d4e5f60",
+    "name": "dresses"
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "jackets"
+  },
+  {
+    "id": "0f1e2d3c-4b5a-6978-8a9b-0c1d2e3f4a5b",
+    "name": "pants"
+  },
+  {
+    "id": "c0ffee12-3456-789a-bcde-f0123456789a",
+    "name": "shirts"
+  },
+  {
+    "id": "deadc0de-1234-5678-9abc-def012345678",
+    "name": "t-shirts"
+  }
 ]
