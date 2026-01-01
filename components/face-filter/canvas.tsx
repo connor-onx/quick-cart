@@ -137,7 +137,6 @@ const AugmentedRealityCamera: React.FC<{ modelPath: string, active: boolean, siz
 
   const callbackReady = (errCode: number | null, spec: unknown) => {
     if (errCode) {
-      console.log("AN ERROR HAPPENS. ERR =", errCode);
       return;
     }
     JeelizThreeFiberHelper.init(spec, _faceFollowers, callbackDetect);
@@ -165,9 +164,9 @@ const AugmentedRealityCamera: React.FC<{ modelPath: string, active: boolean, siz
 
   const callbackDetect = (faceIndex: number, isDetected: boolean) => {
     if (isDetected) {
-      console.log("DETECTED");
+      
     } else {
-      console.log("LOST");
+      
     }
   };
 
@@ -177,17 +176,15 @@ const AugmentedRealityCamera: React.FC<{ modelPath: string, active: boolean, siz
     window.addEventListener("resize", handle_resize);
     window.addEventListener("orientationchange", handle_resize);
     if (!isInitialized) return;
-    console.log(faceFilterCanvasRef.current);
-    // setTimeout(() => {
-        JEELIZFACEFILTER.init({
-        canvas: faceFilterCanvasRef.current,
-        NNC: NN_4EXPR,
-        maxFacesDetected: 1,
-        followZRot: true,
-        callbackReady,
-        callbackTrack,
-      });
-    // }, 3000);
+
+    JEELIZFACEFILTER.init({
+    canvas: faceFilterCanvasRef.current,
+    NNC: NN_4EXPR,
+    maxFacesDetected: 1,
+    followZRot: true,
+    callbackReady,
+    callbackTrack,
+  });
 
     return () => {
       window.removeEventListener("resize", handle_resize);

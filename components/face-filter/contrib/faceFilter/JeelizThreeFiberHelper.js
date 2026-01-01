@@ -187,7 +187,6 @@ const superThat = (function () {
       threeCamera.aspect = _canvasAspectRatio;
       threeCamera.fov = fov;
       threeCamera.view = null;
-      console.log('INFO in JeelizThreeFiberHelper.update_camera(): camera vertical estimated FoV is', fov, 'deg');
       threeCamera.setViewOffset(cvws, cvhs, offsetX, offsetY, cvw, cvh);
       threeCamera.updateProjectionMatrix();
       _threeProjMatrix.copy(threeCamera.projectionMatrix);
