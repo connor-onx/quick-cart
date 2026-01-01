@@ -47,17 +47,20 @@ export default function ProductInfoPageContainer({ product }: ProductInfoPageCon
               selectedSize={selectedSize} 
               setSelectedSize={setSelectedSize}
             />
-            <Button
-              onClick={enableAr}
-              disabled={!selectedSize}
-              className={`w-full h-auto py-12 rounded-3xl text-4xl transition-all duration-300 flex items-center justify-center gap-6 shadow-2xl mb-4 ${selectedSize
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-purple-500/50 hover:scale-105 active:scale-95'
-                  : 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                }`}
-            >
-              <Camera className="w-16 h-16" />
-              <span>Try with AR</span>
-            </Button>
+            {product.modelPath 
+              ? <Button
+                  onClick={enableAr}
+                  disabled={!selectedSize}
+                  className={`w-full h-auto py-12 rounded-3xl text-4xl transition-all duration-300 flex items-center justify-center gap-6 shadow-2xl mb-4 ${selectedSize
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-purple-500/50 hover:scale-105 active:scale-95'
+                      : 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                    }`}
+                >
+                  <Camera className="w-16 h-16" />
+                  <span>Try with AR</span>
+                </Button>
+              : null
+            }
             <Button
               onClick={openMap}
               className="w-full h-auto py-12 rounded-3xl text-4xl transition-all duration-300 flex items-center justify-center gap-6 shadow-2xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-blue-500/50 hover:scale-105 active:scale-95"

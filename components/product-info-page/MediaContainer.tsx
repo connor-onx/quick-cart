@@ -20,7 +20,10 @@ export default function MediaContainer({ product, ARActive, selectedSize }: Medi
           width={560}
           height={956}
         />
-        <AugmentedRealityCamera modelPath={product.modelPath} active={ARActive} size={selectedSize} />
+        {product.modelPath
+          ? <AugmentedRealityCamera modelPath={product.modelPath} active={ARActive} size={selectedSize}/>
+          : null
+        }
       </div>
     </div>
   )
