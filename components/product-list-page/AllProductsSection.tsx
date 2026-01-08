@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import AllProductsCard from "./AllProductsCard";
-import { ProductMinimal } from "@/app/types/shared";
 
 interface AllProductsSectionProps {
   categoryRoute: string;
@@ -26,7 +25,7 @@ export default function AllProductsSection({ categoryRoute, categoryId }: AllPro
         const data = await response.json();
         
         // Transform BackendProduct to ProductMinimal
-        const transformedProducts: ProductMinimal[] = data.map((p: any) => ({
+        const transformedProducts: ProductMinimal[] = data.map((p: BackendProduct) => ({
           id: p.id,
           name: p.name,
           price: p.price,

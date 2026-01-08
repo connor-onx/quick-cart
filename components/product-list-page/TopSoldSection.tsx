@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import TopSoldProductCard from "./TopSoldProductCard";
-import { ProductMinimal } from "@/app/types/shared";
 
 interface TopSoldSectionProps {
   categoryRoute: string;
@@ -30,7 +29,7 @@ export default function TopSoldSection({ categoryRoute, categoryId }: TopSoldSec
         const data = await response.json();
         
         // Transform BackendProduct to ProductMinimal
-        const transformedProducts: ProductMinimal[] = data.map((p: any) => ({
+        const transformedProducts: ProductMinimal[] = data.map((p: BackendProduct) => ({
           id: p.id,
           name: p.name,
           price: p.price,
