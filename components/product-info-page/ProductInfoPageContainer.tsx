@@ -3,10 +3,12 @@
 import Metadata from "./Metadata";
 import MediaContainer from "./MediaContainer";
 import StyleWithCard from "./StyleWithCard";
+import BackButton from "../shared/BackButton";
 import { Button } from "../ui/button";
-import { ArrowLeft, Camera, MapPin } from "lucide-react";
+import { Camera, MapPin } from "lucide-react";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import ShoppingCartButton from "../shared/ShoppingCartButton";
+import ThemeToggleButton from "../shared/ThemeToggleButton";
 
 interface ProductInfoPageContainerProps {
   product: Product;
@@ -16,8 +18,6 @@ export default function ProductInfoPageContainer({ product }: ProductInfoPageCon
 
   const [selectedSize, setSelectedSize] = useState<ProductSize>(product.sizes[0]);
   const [ARActive, setARActive] = useState<boolean>(false);
-
-  const router = useRouter();
 
   function enableAr() {
     setARActive(prev => !prev);
@@ -29,14 +29,10 @@ export default function ProductInfoPageContainer({ product }: ProductInfoPageCon
 
   return (
     <div className="min-h-screen p-8 bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
-      <div className="mb-8">
-        <Button
-          onClick={() => router.back()}
-          className="flex items-center bg-transparent gap-4 text-3xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors active:scale-95"
-        >
-          <ArrowLeft className="w-10 h-10"/>
-          Back
-        </Button>
+      <div className="flex gap-4 mb-8">
+        <BackButton className="mr-auto"/>
+        <ThemeToggleButton/>
+        <ShoppingCartButton/>
       </div>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 gap-8">
