@@ -14,7 +14,7 @@ export default async function JacketPage({ params }: JacketPageProps) {
   
   return (
     <main className="prose mx-auto p-4">
-      <ProductInfoPageContainer product={jacket} />
+      <ProductInfoPageContainer product={jacket}/>
     </main>
   )
 }

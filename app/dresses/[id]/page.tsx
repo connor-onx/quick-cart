@@ -14,7 +14,7 @@ export default async function DressPage({ params }: DressPageProps) {
   
   return (
     <main className="prose mx-auto p-4">
-      <ProductInfoPageContainer product={dress} />
+      <ProductInfoPageContainer product={dress}/>
     </main>
   )
 }

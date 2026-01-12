@@ -38,3 +38,5 @@ type ProductMinimal = {
 }
 
 type ProductSize = "XS" | "S" | "M" | "L" | "XL";
+
+type TimeFilter = "today" | "this-week" | "this-month" | "this-year";
