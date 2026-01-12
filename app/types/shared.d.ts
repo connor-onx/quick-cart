@@ -39,22 +39,4 @@ type ProductMinimal = {
 
 type ProductSize = "XS" | "S" | "M" | "L" | "XL";
 
-interface AllProductsSectionProps {
-  categoryRoute: string;
-  products: ProductMinimal[];
-}
-
-interface TopSoldSectionProps {
-  categoryRoute: string;
-  products: ProductMinimal[];
-}
-
-interface TopSoldProductCardProps {
-  product: ProductMinimal;
-  rank: number;
-  categoryRoute: string;
-}
-
-interface PageHeaderProps {
-  categoryName: string;
-}
+type TimeFilter = "today" | "this-week" | "this-month" | "this-year";

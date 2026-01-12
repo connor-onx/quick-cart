@@ -3,6 +3,12 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+interface TopSoldProductCardProps {
+  product: ProductMinimal;
+  rank: number;
+  categoryRoute: string;
+}
+
 
 export default function TopSoldProductCard({ 
   product, 

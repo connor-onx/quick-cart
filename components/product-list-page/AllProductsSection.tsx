@@ -1,5 +1,10 @@
 import AllProductsCard from "./AllProductsCard";
 
+interface AllProductsSectionProps {
+  categoryRoute: string;
+  products: ProductMinimal[];
+}
+
 export default function AllProductsSection({ categoryRoute, products }: AllProductsSectionProps) {
   const hasProducts = products.length > 0;
 

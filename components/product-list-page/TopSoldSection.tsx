@@ -4,8 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import TopSoldProductCard from "./TopSoldProductCard";
 
-
-type TimeFilter = "today" | "this-week" | "this-month" | "this-year";
+interface TopSoldSectionProps {
+  categoryRoute: string;
+  products: ProductMinimal[];
+}
 
 export default function TopSoldSection({ categoryRoute, products }: TopSoldSectionProps) {
   const [selectedFilter, setSelectedFilter] = useState<TimeFilter>("today");
