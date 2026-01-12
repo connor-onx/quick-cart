@@ -35,6 +35,6 @@ export default function AllProductsCard({
         </CardHeader>
       </Card>
     </Link>
-  );
+  )
 }
 

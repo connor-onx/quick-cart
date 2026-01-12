@@ -22,3 +22,16 @@ export function getCategoryIdFromRoute(routeSegment: string): string | null {
   }
 }
 
+export function getProductsByCategoryId(categoryId: string | null): BackendProduct[] {
+  try {
+    const filePath = path.join(process.cwd(), 'public/data/products.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const products = JSON.parse(fileContents) as BackendProduct[];
+
+    if (!categoryId) return [];
+    return products.filter((p) => p.category_id === categoryId);
+  } catch {
+    return [];
+  }
+}
+

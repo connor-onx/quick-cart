@@ -1,7 +1,3 @@
-interface PageHeaderProps {
-  categoryName: string;
-}
-
 export default function PageHeader({ categoryName }: PageHeaderProps) {
   return (
     <div className="text-center mb-8">

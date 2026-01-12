@@ -10,10 +10,10 @@ export default function CartButton() {
         variant="ghost"
         className="text-gray-700 hover:text-gray-900 hover:bg-transparent p-0 h-auto font-normal"
       >
-        <ShoppingCart className="h-5 w-5 mr-1" />
+        <ShoppingCart className="h-5 w-5 mr-1"/>
         <span>Cart</span>
       </Button>
     </Link>
-  );
+  )
 }
 

@@ -14,7 +14,7 @@ export default async function HatPage({ params }: HatPageProps) {
   
   return (
     <main className="prose mx-auto p-4">
-      <ProductInfoPageContainer product={hat} />
+      <ProductInfoPageContainer product={hat}/>
     </main>
   )
 }

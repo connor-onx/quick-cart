@@ -9,10 +9,10 @@ export default function BackButton() {
         variant="ghost"
         className="text-gray-700 hover:text-gray-900 hover:bg-transparent p-0 h-auto font-normal"
       >
-        <ChevronLeft className="h-5 w-5 mr-1" />
+        <ChevronLeft className="h-5 w-5 mr-1"/>
         <span>Back</span>
       </Button>
     </Link>
-  );
+  )
 }
 

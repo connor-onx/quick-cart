@@ -1,59 +1,13 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import AllProductsCard from "./AllProductsCard";
 
-interface AllProductsSectionProps {
-  categoryRoute: string;
-  categoryId: string | null;
-}
-
-export default function AllProductsSection({ categoryRoute, categoryId }: AllProductsSectionProps) {
-  const [products, setProducts] = useState<ProductMinimal[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      if (!categoryId) {
-        setLoading(false);
-        return;
-      }
-
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/product?category-id=${categoryId}`);
-        const data = await response.json();
-        
-        // Transform BackendProduct to ProductMinimal
-        const transformedProducts: ProductMinimal[] = data.map((p: BackendProduct) => ({
-          id: p.id,
-          name: p.name,
-          price: p.price,
-          images: p.images,
-          category: categoryRoute,
-        }));
-
-        setProducts(transformedProducts);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-        setProducts([]);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, [categoryId, categoryRoute]);
+export default function AllProductsSection({ categoryRoute, products }: AllProductsSectionProps) {
+  const hasProducts = products.length > 0;
 
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold text-black mb-6">All Products</h2>
 
-      {loading ? (
-        <div className="flex justify-center items-center py-12">
-          <p className="text-gray-500">Loading...</p>
-        </div>
-      ) : products.length === 0 ? (
+      {!hasProducts ? (
         <div className="flex justify-center items-center py-12">
           <p className="text-gray-500">No products found</p>
         </div>
@@ -69,6 +23,6 @@ export default function AllProductsSection({ categoryRoute, categoryId }: AllPro
         </div>
       )}
     </section>
-  );
+  )
 }
 

@@ -1,55 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import TopSoldProductCard from "./TopSoldProductCard";
 
-interface TopSoldSectionProps {
-  categoryRoute: string;
-  categoryId: string | null;
-}
 
 type TimeFilter = "today" | "this-week" | "this-month" | "this-year";
 
-export default function TopSoldSection({ categoryRoute, categoryId }: TopSoldSectionProps) {
+export default function TopSoldSection({ categoryRoute, products }: TopSoldSectionProps) {
   const [selectedFilter, setSelectedFilter] = useState<TimeFilter>("today");
-  const [products, setProducts] = useState<ProductMinimal[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      if (!categoryId) {
-        setLoading(false);
-        return;
-      }
-
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/product?category-id=${categoryId}`);
-        const data = await response.json();
-        
-        // Transform BackendProduct to ProductMinimal
-        const transformedProducts: ProductMinimal[] = data.map((p: BackendProduct) => ({
-          id: p.id,
-          name: p.name,
-          price: p.price,
-          images: p.images,
-          category: categoryRoute,
-        }));
-
-        // For now, we'll just take the first 3 products as "top sold"
-        // In a real app, this would be sorted by sales data filtered by time period
-        setProducts(transformedProducts.slice(0, 3));
-      } catch (error) {
-        console.error("Error fetching products:", error);
-        setProducts([]);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, [categoryId, categoryRoute, selectedFilter]);
+  const displayProducts = products.slice(0, 3);
 
   const filters = [
     { value: "today" as TimeFilter, label: "Today" },
@@ -79,18 +39,13 @@ export default function TopSoldSection({ categoryRoute, categoryId }: TopSoldSec
           ))}
         </div>
       </div>
-
-      {loading ? (
-        <div className="flex justify-center items-center py-12">
-          <p className="text-gray-500">Loading...</p>
-        </div>
-      ) : products.length === 0 ? (
+      {products.length === 0 ? (
         <div className="flex justify-center items-center py-12">
           <p className="text-gray-500">No products found</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {products.map((product, index) => (
+          {displayProducts.map((product, index) => (
             <TopSoldProductCard
               key={product.id}
               product={product}
@@ -101,6 +56,6 @@ export default function TopSoldSection({ categoryRoute, categoryId }: TopSoldSec
         </div>
       )}
     </section>
-  );
+  )
 }
 

@@ -3,22 +3,29 @@ import TopSoldSection from "@/components/product-list-page/TopSoldSection";
 import AllProductsSection from "@/components/product-list-page/AllProductsSection";
 import BackButton from "@/components/product-list-page/BackButton";
 import CartButton from "@/components/product-list-page/CartButton";
-import { getCategoryNameFromRoute } from "@/lib/utils";
-import { getCategoryIdFromRoute } from "@/lib/server-utils";
+import { getCategoryIdFromRoute, getProductsByCategoryId } from "@/lib/server-utils";
 
 export default function TShirtsPage() {
-  const categoryName = getCategoryNameFromRoute("t-shirts");
+  const categoryName = "T-Shirts";
   const categoryId = getCategoryIdFromRoute("t-shirts");
+  const backendProducts = getProductsByCategoryId(categoryId);
+  const products: ProductMinimal[] = backendProducts.map((p) => ({
+    id: p.id,
+    name: p.name,
+    price: p.price,
+    images: p.images,
+    category: "t-shirts",
+  }));
   
   return (
     <main className="min-h-screen p-6 bg-gradient-to-b from-blue-50 to-white">
       <div className="flex justify-between items-start mb-6">
-        <BackButton />
-        <CartButton />
+        <BackButton/>
+        <CartButton/>
       </div>
-      <PageHeader categoryName={categoryName} />
-      <TopSoldSection categoryRoute="t-shirts" categoryId={categoryId} />
-      <AllProductsSection categoryRoute="t-shirts" categoryId={categoryId} />
+      <PageHeader categoryName={categoryName}/>
+      <TopSoldSection categoryRoute="t-shirts" products={products}/>
+      <AllProductsSection categoryRoute="t-shirts" products={products}/>
     </main>
   )
 }

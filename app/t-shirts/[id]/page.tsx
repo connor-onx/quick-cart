@@ -14,7 +14,7 @@ export default async function TShirtPage({ params }: TShirtPageProps) {
   
   return (
     <main className="prose mx-auto p-4">
-      <ProductInfoPageContainer product={tshirt} />
+      <ProductInfoPageContainer product={tshirt}/>
     </main>
   )
 }
