@@ -7,8 +7,8 @@ interface CatCardProps {
 
 export default function CatCard({ category }: CatCardProps) {
   return (
-    <Card 
-      className="relative p-0 w-[564px] h-[348px] cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500"
+    <Card
+      className="relative p-0 w-[500px] h-[348px] cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500"
       style={{
         backgroundImage: `url(${category.image})`,
         backgroundSize: 'cover',
