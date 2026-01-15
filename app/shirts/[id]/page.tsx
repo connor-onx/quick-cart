@@ -13,7 +13,7 @@ export default async function ShirtPage({ params }: ShirtPageProps) {
   const shirt = await res.json();
   
   return (
-    <main className="prose mx-auto p-4">
+    <main className="prose mx-auto">
       <ProductInfoPageContainer product={shirt}/>
     </main>
   )
