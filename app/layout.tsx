@@ -1,4 +1,5 @@
 import ShoppingCartProvider from "./context/ShoppingCartContext";
+import ThemeProvider from "./context/ThemeContext";
 import CartDrawer from "../components/cart/CartDrawer";
 
 import type { Metadata } from "next";
@@ -26,10 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased`}
       >
-        <ShoppingCartProvider>
-          {children}
-          <CartDrawer/>
-        </ShoppingCartProvider>
+        <ThemeProvider>
+          <ShoppingCartProvider>
+            {children}
+            <CartDrawer/>
+          </ShoppingCartProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
