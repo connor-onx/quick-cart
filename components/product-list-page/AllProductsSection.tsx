@@ -10,7 +10,7 @@ export default function AllProductsSection({ categoryRoute, products }: AllProdu
 
   return (
     <section className="mb-12">
-      <h2 className="text-3xl font-bold text-black mb-6">All Products</h2>
+      <h2 className="text-3xl font-bold text-foreground mb-6">All Products</h2>
 
       {!hasProducts ? (
         <div className="flex justify-center items-center py-12">
