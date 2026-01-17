@@ -19,7 +19,7 @@ export default function HatsPage() {
   }));
   
   return (
-    <main className="min-h-screen p-6 bg-background">
+    <main className="min-h-screen p-8 bg-background bg-gradient-to-b from-white to-white dark:from-gray-800 dark:to-gray-900">
       <div className="flex gap-4 mb-6">
         <BackButton className="mr-auto"/>
         <ThemeToggleButton/>
