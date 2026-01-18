@@ -13,7 +13,7 @@
       "a3b2c1d4-e5f6-47a8-9b0c-1234567890ab",
       "b4c3d2e5-f6a7-48b9-0c1d-0987654321fe"
     ],
-    "modelPath": "/models/scene.gltf",
+    "modelPath": "/models/luffy_hat/scene.gltf",
     "created_at": "2023-10-01T10:00:00Z",
     "updated_at": "2023-10-15T12:00:00Z"
   }
@@ -32,7 +32,7 @@
         "7f3b9b4e-1c4a-4a67-9b2f-8f5e0a6c2d31",
         "b4c3d2e5-f6a7-48b9-0c1d-0987654321fe"
       ],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2023-11-01T09:00:00Z",
       "updated_at": "2023-11-01T09:00:00Z"
     },
@@ -50,7 +50,7 @@
         "7f3b9b4e-1c4a-4a67-9b2f-8f5e0a6c2d31",
         "a3b2c1d4-e5f6-47a8-9b0c-1234567890ab"
       ],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/hat.glb",
       "created_at": "2023-11-05T11:30:00Z",
       "updated_at": "2023-11-05T11:30:00Z"
       }
@@ -69,7 +69,7 @@
         "7f3b9b4e-1c4a-4a67-9b2f-8f5e0a6c2d31",
         "a3b2c1d4-e5f6-47a8-9b0c-1234567890ab"
       ],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/cowboy_hat/scene.gltf",
       "created_at": "2023-12-01T10:00:00Z",
       "updated_at": "2023-12-01T10:00:00Z"
     },
@@ -87,7 +87,7 @@
         "7f3b9b4e-1c4a-4a67-9b2f-8f5e0a6c2d31",
         "b4c3d2e5-f6a7-48b9-0c1d-0987654321fe"
       ],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2023-12-02T08:30:00Z",
       "updated_at": "2023-12-02T08:30:00Z"
     },
@@ -102,7 +102,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -117,7 +117,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -132,7 +132,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -147,7 +147,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -162,7 +162,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -177,7 +177,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -192,7 +192,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -207,7 +207,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -222,7 +222,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -237,7 +237,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -252,7 +252,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -267,7 +267,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -282,7 +282,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -297,7 +297,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -312,7 +312,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -327,7 +327,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -342,7 +342,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -357,7 +357,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -372,7 +372,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     },
@@ -387,7 +387,7 @@
       "brand_id": "d07efc15-f44a-47e1-8606-2bc4fd1ba0c3",
       "status": "active",
       "relatedProducts": [],
-      "modelPath": "/models/scene.gltf",
+      "modelPath": "/models/luffy_hat/scene.gltf",
       "created_at": "2024-01-15T10:00:00Z",
       "updated_at": "2024-01-15T10:00:00Z"
     }

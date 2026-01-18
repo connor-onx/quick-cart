@@ -51,17 +51,41 @@ const FaceFollower: React.FC<FaceFollowerProps> = (props) => {
     }
   });
 
-  const scaleFactors: Record<ProductSize, number> = {
-    "XS": 0.6,
-    "S": 0.8,
-    "M": 1.0,
-    "L": 1.2,
-    "XL": 1.4
+  function getScaleFactorByModel(modelPath: string): Record<ProductSize, number> {
+    if (modelPath.includes("cowboy_hat")) {
+      return {
+        "XS": 0.4,
+        "S": 0.5,
+        "M": 0.6,
+        "L": 0.7,
+        "XL": 0.8
+      }
+    }
+
+    return {
+      "XS": 0.6,
+      "S": 0.8,
+      "M": 1.0,
+      "L": 1.2,
+      "XL": 1.4
+    }
   }
+
+  const scaleFactors: Record<ProductSize, number> = getScaleFactorByModel(props.modelPath);
+
+  function getPositionByModel(modelPath: string): [number, number, number] {
+    if (modelPath.includes("cowboy_hat")) {
+      return [0, 0, -1];
+    }
+
+    return [0, 0.8, 0]
+  }
+
+  const position = getPositionByModel(props.modelPath);
 
   return (
     <object3D ref={objRef}>
-      <primitive object={gltf.scene} position={[0, 0.8, 0]} scale={[scaleFactors[props.size], scaleFactors[props.size], scaleFactors[props.size]]} />
+      <primitive object={gltf.scene} position={position} scale={[scaleFactors[props.size], scaleFactors[props.size], scaleFactors[props.size]]} />
       <object3D ref={mouthOpenRef} />
       <object3D ref={mouthSmileRef} />
     </object3D>
